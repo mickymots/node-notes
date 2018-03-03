@@ -1,0 +1,27 @@
+{
+  "name": "node-notes",
+  "version": "1.0.0",
+  "description": "simple note app built in node.js",
+  "main": "mian.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mickymots/node-notes.git"
+  },
+  "keywords": [
+    "notes",
+    "nodejs",
+    "tutorials"
+  ],
+  "author": "mickymots",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mickymots/node-notes/issues"
+  },
+  "homepage": "https://github.com/mickymots/node-notes#readme",
+  "dependencies": {
+    "lodash": "^4.17.5"
+  }
+}

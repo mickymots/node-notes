@@ -1,0 +1,83 @@
+Amit Prakash Singh
++44-746-672-5109
+amit.prakashsingh@gmail.com • www.linkedin.com/in/amit-pakash-singh
+174 Rothbury Terrace, Newcastle, NE65DD, U.K.
+
+PROFESSIONAL SUMMARY
+	
+Promote high performance, innovation and security across core business systems
+Results-driven professional offering a progressive, twelve-year career in information technology. Expert in design and build of web applications, architectural elements and integrate with IT infrastructure. Repeated success directing IT projects from inception to execution, strategically allocating resources and delegating tasks to achieve on-time, on-budget delivery.
+Areas of Expertise
+	
+Web Application development | Java | JEE |Angular 4 | Scala | Spring | System Integration Effective Communication | Technical Leadership | Training & Development
+
+Technical Proficiencies
+	
+Platforms	Windows 10; AWS, Linux 
+Software	JBoss, Tomcat, JIRA, GIT, SVN, IntelliJ, STS, Eclipse
+Languages	Java, Scala, JavaScript, HTML, Angular, Spring
+Tools	Maven, Webpack, Ant, Slack, JIRA, GIT, SVN
+Professional Experience	     
+	
+Technical Lead	Accenture Services Pvt. Ltd. 
+Her Majesty Revenue and Customs (HMRC – Gov. UK) 	(Jul 2016 – Present)
+Responsible for design and build of Execution Architecture framework for application modernization project. Serve as a vital resource for build team, overseeing build progress and providing strategic directives in implementation of complex architecture modules. Build future ready delivery teams by planning and executing modernization of tech stack across multiple sprint teams.
+Key Achievements
+1.	Won new HMRC contract through successful demo of multiple high-stake proof of concept developed on Angular 2 based custom Execution Arch.
+2.	Designed and developed the Execution Arch services and custom UI components for delivery teams for faster and consistent delivery of multiple services.
+3.	Rolled out the Execution Arch for 3 delivery teams by planning, execution and successful deployments of multiple sprints.
+4.	Successfully lead the on-time, on-budget completion of design, build and delivery of the Angular 2 project
+5.	Lead the design and development of Angular 2, Scala and IBM Watson based virtual assistant program that sparked interest and enabled us to pursue multiple clients.
+6.	Initiated project-wide Angular 2 up-skilling drive by training 20+ developers across 3 teams at onshore and offshore.
+	
+Technical Lead	Accenture Services Pvt. Ltd. 
+eLicensing (State of Massachusetts, U.S.A)	(Sep’11 – Jul’ 16)
+Leading delivery teams in design, build and execution of complex large-scale implementation projects. Serve as technical lead by designing solution architecture, overseeing build progress and monitoring quality of delivered solution. Key decision maker on technology selection, planning and resource allocation. Leading account wide quality initiative by introduction of automated quality tools and reporting frameworks. People developer and a training champion by conducting workshops, training and webinars. Creating technical content, presenting white-papers and leading reviews of projects.
+
+Key Achievements
+Lead the setup, execution, and delivery of a multi-phase Custom Off-the-Shelf system implementation project that enabled faster delivery, better cost optimization and greater flexibility in resource allocation throughout the project lifecycle.
+1.	Enabled an enterprise level integration approach for remote systems integration with COS solution that promotes scalability and high performance through non-blocking operations.
+2.	Focused on knowledge exchange and upskilling drive that enabled smarter team repositioning over the time and provided greater flexibility in delivery.
+3.	Achieved over 90% reduction in the cost of delivery by training new developers on custom scripting technology by planning and delivery of trainings tailored specifically for the project.
+4.	A highly decoupled and cohesive Spring-AOP based modularised design was built that provided key application wide services like encryption, logging and auditing. 
+5.	Designed integration of printer infrastructure for the project from a remote system that was acknowledged by the client for being first time right.	 
+	
+Technical Lead	Capgemini Service Pvt. Ltd. 
+G.E Aviation (U.S.A)	(May 2010 - Sep 2011)
+Developing new solutions for a large enterprise client by providing technical and thought leadership, planning and managing project execution from inception to delivery. Partner with senior leadership to show-case and introduce new technology in an established solution framework thereby opening new opportunities to innovate and grow.
+1.	Architected a Spring-IOC & JSF framework in JBOSS portlet environment to build an extensible and configurable solution
+2.	Efficient and scalable database modelling by creating logical and physical data models in compliance with relational modelling practices 
+3.	Designed a robust and feature-rich ‘Report Framework’ built on Open source JFreeChart API providing analysis of over 35 real-time parameters with interactive graphical capabilities
+4.	On time execution of 3 SIT and a UAT phase over the 6-month period while planning and building of the continuous integration for the project.
+	
+Associate	J. P. Morgan
+General Ledger Reconciliation & Substantiation (C.T.)	(Jan 2008 - May 2010)
+Senior application developer for corporate technology. Design and develop enhancements. Provide production support level 3.
+
+Key Achievements: 
+1.	Developed some of the key components of the GLRS application that is based on custom framework of the bank
+2.	Developed reports on Business Objects
+3.	Provided L3 support on the legacy production system (RCP/RMR)
+4.	Earned the Certified Web Component Developer (SCWCD)
+5.	Awarded top-performer recognition in both the years with bank
+
+Tata Consultancy Services 	(Oct 2005 - Jan 2008)
+	
+Software Engineer
+
+Key Achievements: 
+1.	Developed high priority enhancements for client's global travel advisory system and the Travel & Living system
+2.	Developed an innovative solution to maximize support team's efficient and gave a demo to the client
+3.	Learned 3 different technology stacks, BREW (Mobile), Java/J2EE and Oracle Purchasing
+4.	Earned my first Java Certification in very first year of the work
+
+EDUCATION 
+	
+Bachelor of Engineering	Jul 2005 - May 2005
+Institute of Engineering and Technology, Indore, India
+
+PROFESSIONAL CREDENTIALS
+	
+?	Sun Certified Web Component Developer 1.5 with 85%
+?	Sun Certified Java Programmer certification 1.4 with 93 %
+?	IIBA Certified Business Analyst
