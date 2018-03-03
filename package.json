@@ -2,7 +2,7 @@
   "name": "node-notes",
   "version": "1.0.0",
   "description": "simple note app built in node.js",
-  "main": "mian.js",
+  "main": "app.js",
   "scripts": {
     "test": "test"
   },
