@@ -1,8 +1,15 @@
-console.log('\n ---- util.js loaded ------\n');
+const _ = require('lodash')
 
 /** Utility function to print array elements with index */
 const arrayPrinter = (element, index) => {
+
+  if(_.isString(element))
   console.log(`result [${index}]= ${element}`)
+  
+  else if(_.isObject(element)){
+    keys = _.keys(element)
+    keys.forEach((key,index) => arrayPrinter(element[key],index))
+  }
 }
 
 

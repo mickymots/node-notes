@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/mickymots/node-notes#readme",
   "dependencies": {
-    "lodash": "^4.17.5"
+    "lodash": "^4.17.5",
+    "yargs": "^11.0.0"
   }
 }
