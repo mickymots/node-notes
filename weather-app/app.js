@@ -13,7 +13,7 @@ const argv = yargs
     .help().argv;
 
 
-//console.log(argv.a)
+console.log(argv.a)
 geocode.geocodeAddress(argv.a, (errorMessage, result) => {
     if (errorMessage) {
         console.log(errorMessage)
@@ -30,6 +30,5 @@ geocode.geocodeAddress(argv.a, (errorMessage, result) => {
         })
     }
 })
-
 
 const fToC = (fTemp) => Math.round((fTemp - 32)*5/9) 

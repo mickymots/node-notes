@@ -26,6 +26,13 @@ const geocodeAddress = (address, callback) => {
 
 }
 
+const checkMain = () =>{
+    console.log('main file = ' + require.main.filename)
+    console.log('main file = ' + __filename)
+}
+
 module.exports = {
-    geocodeAddress
+    geocodeAddress,
+    checkMain
+
 }
