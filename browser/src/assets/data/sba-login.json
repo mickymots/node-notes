@@ -1,0 +1,11 @@
+{
+	"data": [{
+			"userID": "DP00009",
+			"role": ["HIB View Only"]
+		},
+		{
+			"userID": "AB00009",
+			"role": ["HIB Mandated Checks View"]
+		}
+	]
+}

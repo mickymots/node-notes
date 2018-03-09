@@ -1,0 +1,35 @@
+<aside id="side-menu" class="side-menu" data-visible="true">
+
+  <!-- Icon Navigation -->
+  <app-icon-nav></app-icon-nav>
+
+  <div style="padding-top: 54px;">
+
+    <!-- User info panel -->
+    <app-user-info></app-user-info>
+
+    <ul id="side-menu__list" class="side-menu__list" *ngIf="routes" tabindex="-1">
+
+      <ng-container *ngFor="let route of routes">
+
+        <app-menu *ngIf="route.path && route.data.title" heading="{{ route.data.title }}"
+          routerLinkActive #rla="routerLinkActive" [collapsed]="!rla.isActive">
+
+          <ng-container *ngFor="let child of route.children">
+            <li *ngIf="child.path && child.data.title && !child.data.hidden" class="side-menu__list__item">
+              <a *ngIf="route.moduleType == external" href="{{ route.path + '/' + child.path }}"
+                routerLinkActive="dropdown-active">{{ child.data.title }}</a>
+              <a *ngIf="route.moduleType != external" routerLink="{{'/'+ route.path + '/' + child.path }}"
+                routerLinkActive="dropdown-active">{{ child.data.title }}</a>
+            </li>
+          </ng-container>
+
+        </app-menu>
+
+      </ng-container>
+
+    </ul>
+
+  </div>
+
+</aside>

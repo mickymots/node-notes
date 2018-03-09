@@ -1,0 +1,10 @@
+<div class="form-group">
+    <label for="{{idRef || 'phoneNumber'}}" [class.required]="required" class="control-label">
+        {{ label }}
+    </label>
+    <app-error-msg [msg]="errorMessage"></app-error-msg>
+
+    <input type="text" class="form-control" [attr.readonly]="readonly" [formControl]="childControl"
+        name="{{idRef || 'phoneNumber'}}" id="{{idRef || 'phoneNumber'}}" [required]="required"
+    />
+</div>

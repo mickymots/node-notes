@@ -1,0 +1,125 @@
+<app-heading text="Preferences"></app-heading>
+<app-subheading text="System Guidance and Preferences:"></app-subheading>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+
+    <hr>
+
+    <p>
+      <b>Required Fields
+        <span style="color: #f44336; font-size: 20px;">*</span>
+      </b>
+    </p>
+    <p>Fields marked with an asterisk are a mandatory field.</p>
+
+    <hr>
+
+    <form id="preferences">
+
+      <div class="form-group">
+        <label for="theme" class="control-label">Theme Switcher:</label>
+        <select name="theme" class="form-control" (change)="this.preferences.setTheme($event.target.value)">
+          <option value="" [selected]="this.preferences.getTheme() === 'standard'">Standard</option>
+          <option value="high-contrast-black" [selected]="this.preferences.getTheme() === 'high-contrast-black'">High Contrast Black</option>
+          <option value="high-contrast-white" [selected]="this.preferences.getTheme() === 'high-contrast-white'">High Contrast White</option>
+          <option value="green" [selected]="this.preferences.getTheme() === 'green'">Green</option>
+          <option value="red" [selected]="this.preferences.getTheme() === 'red'">Red</option>
+        </select>
+      </div>
+
+    </form>
+
+    <hr>
+
+    <p>
+      <b>Access Keys</b>
+    </p>
+    <p>Most Web browser goes to direct link when certain combination of keys are pressed.
+      For windows this is done by pressing Alt + Access key.</p>
+
+    <table class="table table-bordered">
+      <tr>
+        <th>Key</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>p</td>
+        <td>Print Page</td>
+      </tr>
+      <tr>
+        <td>r</td>
+        <td>Preferences Page</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Help Page</td>
+      </tr>
+      <tr>
+        <td>l</td>
+        <td>Close Page</td>
+      </tr>
+      <tr>
+        <td>t</td>
+        <td>Top of Page</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>Navigator Bar</td>
+      </tr>
+      <tr>
+        <td>q</td>
+        <td>Search</td>
+      </tr>
+      <tr>
+        <td>g</td>
+        <td>Search Button</td>
+      </tr>
+      <tr>
+        <td>e</td>
+        <td>Edit Button</td>
+      </tr>
+      <tr>
+        <td>i</td>
+        <td>Insert Button</td>
+      </tr>
+      <tr>
+        <td>s</td>
+        <td>Save Button</td>
+      </tr>
+      <tr>
+        <td>d</td>
+        <td>Delete Button</td>
+      </tr>
+      <tr>
+        <td>c</td>
+        <td>Cancel Button</td>
+      </tr>
+      <tr>
+        <td>,</td>
+        <td>First Page Button</td>
+      </tr>
+      <tr>
+        <td>.</td>
+        <td>Last Page Button</td>
+      </tr>
+      <tr>
+        <td>v</td>
+        <td>Previous button</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>Next</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>Expand All</td>
+      </tr>
+      <tr>
+        <td>o</td>
+        <td>Collapse All</td>
+      </tr>
+    </table>
+
+  </div>
+</div>

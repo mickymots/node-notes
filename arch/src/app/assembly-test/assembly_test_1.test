@@ -1,0 +1,129 @@
+/**
+ * This is the Assembly Test file for testing integration between the assembly -
+ * Exception service -> Reference Data service -> Notification service
+ * Note - This AT files uses SOAP UI as the backend stub server
+ */
+
+//Angular 'testing' imports
+import { ComponentFixture, TestBed, async, fakeAsync, inject, tick } from '@angular/core/testing';
+
+//Angular 'core' imports
+import { Injectable, OnInit, OnDestroy } from '@angular/core';
+
+//Angular 'HTTP' & 'RxJS' imports
+import { HttpModule } from '@angular/http';
+import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
+
+//Custom imports
+import { ExceptionService } from '../exception-handler/exception.service';
+import { Exception } from '../exception-handler/exception';
+import { ReferenceDataService } from '../reference-data/reference-data.service';
+import { ReferenceData } from '../reference-data/reference-data';
+import { NotificationService } from '../notification/notification.service';
+import { Notification } from '../notification/notification';
+import { LoggingService } from '../logging/logging.service';
+import { MessageService } from '../message-handler/message.service';
+import { AuthService } from '../auth/auth.service';
+import { SerializationHelper } from '../serialization/SerializationHelper';
+import { environment } from '../../environments/environment';
+import { AuthReducer } from '../state-manager/auth.reducer';
+import { SessionStateReducer } from '../state-manager/session-state.reducer';
+
+// Vendor Imports
+import { StoreModule } from '@ngrx/store';
+
+const desc = 'Testing assembly for Exception -> RefData -> Notification : Exception service';
+
+describe(desc, () => {
+
+  let exception: any;
+  let notification: any;
+  let subscription: Subscription;
+  let expService: ExceptionService;
+  let notifService: NotificationService;
+  let refService: ReferenceDataService;
+  let mssgService: MessageService;
+  let refData: ReferenceData[] = [];
+
+  let _url = environment.referenceDataService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        HttpModule,
+        StoreModule.provideStore({
+          authReducer: AuthReducer,
+          sessionStateReducer: SessionStateReducer
+        })
+      ],
+      providers: [
+        MessageService,
+        ReferenceDataService,
+        LoggingService,
+        ExceptionService,
+        NotificationService,
+        AuthService        
+      ]
+    });
+  });
+
+  beforeEach(inject(
+    [ReferenceDataService, MessageService, ExceptionService, NotificationService],
+    (_refService, _mssgService, _expService, _notifService) => {
+      refService = _refService;
+      mssgService = _mssgService;
+      expService = _expService;
+      notifService = _notifService;      
+    })
+  );
+
+  //TEST #1: Exception was not thrown.Notification queue should be empty
+  it ('has not received any exception yet',()=> {
+    notifService.notificationQueue$.subscribe(result => {
+      expect(result.message).toBeUndefined()
+    });
+  })
+
+  //TEST #2: Exception was found in the Reference Data lookup
+  it('should add the exception message to the notification queue when reference data was found', (done:any) => {
+
+    let _excepDef = new Exception('Error in loading reference data', 1001);
+    
+
+    notifService.notificationQueue$.subscribe(result => {
+       expect(result.message).toEqual("Error in loading reference data")
+       done();
+    });
+
+    expService.throw(_excepDef);
+  });
+
+  //TEST #3: Exception was not found in the Reference Data lookup
+  it('should add the default exception message to the notification queue when reference data was not found', (done:any) => {
+
+    let _excepNotDef = new Exception('Random Exception', 2002);
+    
+    notifService.notificationQueue$.subscribe(result => {
+      expect(result.message).toEqual("Random Exception")
+      done();
+    });
+
+    expService.throw(_excepNotDef);
+  });
+
+  //TEST #4: Exception code is defined in Reference Data, but exception message is overriden by developer in code
+  it('should add the overriden exception message to the notification queue when reference data was found', (done:any) => {
+
+    let _excepCodeDef = new Exception('Different exception message!!', 1000);
+    
+    notifService.notificationQueue$.subscribe(result => {
+      expect(result.message).toEqual("Person.age not defined in BFM1234")
+      done();
+    });
+
+    expService.throw(_excepCodeDef);
+  });
+
+});
+

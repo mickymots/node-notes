@@ -1,0 +1,8 @@
+<div class="form-group">
+  <label for="{{idRef || 'addressLine'}}" [class.required]="required"> {{label}} </label>
+  <app-error-msg *ngIf="!readonly" [msg]="errorMessage"></app-error-msg>
+
+  <input type="text" class="form-control" [attr.readonly]="readonly" name="{{idRef || 'addressLine'}}"
+    [formControl]="childControl" id="{{idRef || 'addressLine'}}" [required]="required"
+  />
+</div>

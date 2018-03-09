@@ -1,0 +1,55 @@
+@import 'styles/variables';
+
+.header__icons {
+  display: table;
+  margin-bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 54px !important;
+  background-color: $hmrcGreen;
+  text-align: center;
+  box-shadow: $shadowOne;
+  position: absolute;
+  width: 260px;
+  z-index: 900;
+}
+
+.header__icons li {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.header__icons li a {
+  color: #fff;
+  font-size: 1.4em;
+  display: block;
+  line-height: 1;
+  text-align: center;
+}
+
+.header__icons__show-more {
+  display: none !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .header__icons__show-more {
+    display: inline-block !important;
+  }
+}
+
+.dash-icons {
+  background-color: #008670;
+  box-shadow: 2px 0 0px 0px #008670;
+  height: 70px !important;
+}
+
+button {
+  color: white;
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  height: 30px;
+  width: 34px;
+}

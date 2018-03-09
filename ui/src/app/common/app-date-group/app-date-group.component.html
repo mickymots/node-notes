@@ -1,0 +1,10 @@
+<div class="form-group" [formGroup]="dateFormGroup">
+    <div class="col-xs-12 col-sm-6 col-md-6">
+        <app-date [label]="startDateLabel" formControlName="startDate" idRef="{{startDateIdRef}}"
+            [readonly]="readonly"></app-date>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+        <app-date [label]="endDateLabel" formControlName="endDate" idRef="{{endDateIdRef}}"
+            [readonly]="readonly"></app-date>
+    </div>
+</div>

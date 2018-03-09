@@ -1,0 +1,17 @@
+<div class="form-group">
+
+    <label [for]="idRef" class="control-label" [class.required]="required">{{ label }}</label>
+    <app-error-msg [msg]="errorMessage"></app-error-msg>
+
+    <select *ngIf="workOnIds" [id]="idRef" [name]="idRef" [class]="cssClass || 'form-control'"
+        [attr.readonly]="readonly" [formControl]="childControl" [required]="required">
+        <option value="">Please Select...</option>
+        <option *ngFor="let item of data" value="{{ item.id }}">{{ item.values }}</option>
+    </select>
+
+    <select *ngIf="!workOnIds" [id]="idRef" [name]="idRef" [class]="cssClass || 'form-control'"
+        [attr.readonly]="readonly" [formControl]="childControl" [required]="required">
+        <option value="">Please Select...</option>
+        <option *ngFor="let item of data" value="{{ item.values }}">{{ item.values }}</option>
+    </select>
+</div>

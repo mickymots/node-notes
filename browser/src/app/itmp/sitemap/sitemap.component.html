@@ -1,0 +1,19 @@
+<app-heading text="Sitemap"></app-heading>
+
+<ul>
+
+    <!-- Browser Routes -->
+    <ng-container *ngFor="let route of routes[0].children">
+        <li *ngIf="route.data && !route.data.hidden">
+            <a [routerLink]="'/' + route.path">{{ route.data.title }}</a>
+        </li>
+    </ng-container>
+
+    <!-- Module Routes -->
+    <ng-container *ngFor="let route of moduleRoutes">
+        <li *ngIf="route[0].data && !route[0].data.hidden">
+            <a [routerLink]="'/' + route[0].path">{{ route[0].data.title }}</a>
+        </li>
+    </ng-container>
+
+</ul>

@@ -1,0 +1,34 @@
+<div class="side-menu__information">
+  <div class="row">
+    <div class="col-xs-3">
+      <img class="side-menu__icon" src="assets/images/icons/user.svg" alt="User Icon">
+    </div>
+    <div class="col-xs-9">
+      <b *ngIf="lineOne" [title]="lineOne | async" class="truncate">{{ lineOne | async }}</b>
+      <span *ngIf="lineTwo" [title]="lineTwo | async" class="">{{ lineTwo | async }}</span>
+      <span *ngIf="lineThree" [title]="lineThree | async" class="truncate">{{ lineThree | async }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+      <img class="side-menu__icon" src="assets/images/icons/house.svg" alt="House Icon">
+    </div>
+    <div class="col-xs-9">
+      <span *ngIf="lineFour" [title]="lineFour | async" class="truncate">{{ lineFour | async }}</span>
+      <span *ngIf="lineFive" [title]="lineFive | async" class="truncate">{{ lineFive | async }}</span>
+      <span *ngIf="lineSix" [title]="lineSix | async" class="truncate">{{ lineSix | async }}</span>
+    </div>
+  </div>
+  <div class="row" *ngIf="graduateSection">
+    <div class="col-xs-3">
+      <img class="side-menu__icon" src="assets/images/icons/graduate.svg" alt="House Icon">
+    </div>
+    <div class="col-xs-9">
+      <span *ngIf="lineSeven" [title]="lineSeven | async" class="truncate title">{{ lineSeven | async }}</span>
+      <span *ngIf="lineEight" [title]="lineEight | async" class="truncate">{{ lineEight | async }}</span>
+      <span *ngIf="lineNine" [title]="lineNine | async" class="truncate title">{{ lineNine | async }}</span>
+      <span *ngIf="lineTen" [title]="lineTen | async" class="truncate">{{ lineTen | async }}</span>
+      <span *ngIf="lineEleven" [title]="lineEleven | async" class="truncate title">{{ lineEleven | async }}</span>
+      <span *ngIf="lineTwelve" [title]="lineTwelve | async" class="truncate">{{ lineTwelve | async }}</span>
+    </div>
+  </div>

@@ -1,0 +1,24 @@
+@import 'styles/variables';
+.footer {
+  position: relative;
+  background-color: #dee0e2;
+  border-top: 1px solid darken(#dee0e2, 10%);
+  z-index: 950;
+  height: $footerHeight;
+  clear: both;
+}
+
+.footer__text {
+  margin-bottom: 0;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.footer__link {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}

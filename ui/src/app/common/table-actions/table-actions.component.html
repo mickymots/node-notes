@@ -1,0 +1,5 @@
+<div class="pull-right">
+  <app-button colour="black" level="secondary" (click)="emitExpand()" accesskeyRef="x">Expand All</app-button>
+  <app-button colour="black" level="secondary" (click)="emitCollapse()" accesskeyRef="o">Collapse All</app-button>
+  <app-button *ngIf="resetRequired" colour="red" level="secondary" (click)="emitReset()">Clear Filters</app-button>
+</div>

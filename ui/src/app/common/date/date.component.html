@@ -1,0 +1,35 @@
+<div class="form-group">
+
+  <!-- Label -->
+  <label [for]="idRef" [class.required]="required">{{ label }}
+    <small>({{ format }})</small>
+  </label>
+  <app-error-msg *ngIf="!readonly" [msg]="errorMessage"></app-error-msg>
+
+  <!-- Input -->
+  <div class="input-group">
+
+    <input [formControl]="childControl" [id]="idRef" [name]="idRef" class="form-control"
+      [attr.readonly]="readonly" [class.error]="errorMessage != null && !readonly"
+      type="text" [required]="required" [maxlength]="maxlength" [minlength]="minlength"
+      [disableCond]="disabled">
+
+    <!-- Duplicate input hidden -->
+    <input [value]="activeDate" tabindex="-1" class="form-control hidden-datepicker"
+      mdInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate" (dateChange)="setDate($event)"
+      autocomplete="off">
+
+    <span *ngIf="!readonly && !hidepicker" class="input-group-btn" (click)="!childControl.disabled && picker.open()">
+      <button type="button" title="Calendar" class="btn btn-default" [class.active]="datepicker"
+        [disabled]="disabled">
+        <span class="sr-only">Calendar</span>
+        <app-icon iconClass="glyphicon-calendar"></app-icon>
+      </button>
+    </span>
+
+  </div>
+
+  <!-- Datepicker -->
+  <mat-datepicker #picker></mat-datepicker>
+
+</div>

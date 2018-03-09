@@ -1,0 +1,1 @@
+export const COUNTRY_LIST = [{"type":"COUNTRIES","id":"00000000","start_Date":"01/01/1900","end_Date":"01/01/2078","values":"NOT SPECIFIED OR NOT USED|0|0|"}]

@@ -1,0 +1,30 @@
+@import 'styles/variables';
+.header {
+  background-color: $hmrcGreen;
+  color: #fff;
+  height: $headerHeight;
+  box-shadow: $shadowOne;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.header > span {
+  display: block;
+  text-align: center;
+  font-size: 1.7em;
+  margin: 0;
+  padding-top: 22px;
+  font-weight: bold;
+}
+
+.header span span {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 950px) {
+  .header span span {
+    display: none;
+  }
+}

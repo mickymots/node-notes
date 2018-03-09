@@ -1,0 +1,28 @@
+<div class="dashboard">
+
+  <!-- Heading -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="dashboard__heading">
+        <p>Please select an application by clicking on one of the options below or select an account type and open an account.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="row">
+    <ul class="dashboard__navigation">
+
+      <!-- Loop through modules -->
+      <ng-container>
+        <app-dash-panel *ngFor="let module of modules"
+                        link="{{ module.path }}"
+                        image="{{ module.icon }}"
+                        description="{{ module.name }}">
+        </app-dash-panel>
+      </ng-container>
+
+    </ul>
+  </div>
+  
+</div>

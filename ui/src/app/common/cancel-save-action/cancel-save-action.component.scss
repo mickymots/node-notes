@@ -1,0 +1,22 @@
+.buttons-container {
+  width: calc(100% - 60px);
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  bottom: 0;
+  left: 30px;
+  position: absolute;
+}
+
+.form-actions-spacer {
+  padding-top: 70px;
+}
+
+.right_button {
+  float: right;
+  margin-left: 5px;
+}
+
+.buttons_right_group {
+  width: 50%;
+  float: right;
+}

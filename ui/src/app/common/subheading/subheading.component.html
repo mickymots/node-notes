@@ -1,0 +1,7 @@
+<h2 class="subheading">
+  {{ text }}
+  <a routerLink="{{ buttonLink }}" *ngIf="buttonIcon || buttonText" class="btn btn-default btn-sm" style="margin-left: 15px">
+    <app-icon *ngIf="buttonIcon" iconClass="{{ buttonIcon }}"></app-icon>
+    <span *ngIf="buttonText" style="margin-left: 7px;">{{ buttonText }}</span>
+  </a>
+</h2>

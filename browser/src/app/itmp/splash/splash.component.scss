@@ -1,0 +1,96 @@
+.hmrc {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  margin: 180px auto 170px auto;
+  background-image: url('/assets/images/splash/hmrc.jpg');
+  background-size: cover;
+  background-position-x: 25%;
+  filter: sepia(50%);
+
+  img {
+    filter: sepia(50%);
+  }
+}
+
+.hmrc__location {
+  width: 250px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+
+  &:after {
+    content: attr(data-location);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 1px 6px;
+  }
+
+  > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:nth-of-type(1) {
+    top: -150px;
+    left: -250px;
+  }
+
+  &:nth-of-type(2) {
+    top: -150px;
+    left: 0;
+  }
+
+  &:nth-of-type(3) {
+    top: -150px;
+    left: 250px;
+  }
+
+  &:nth-of-type(4) {
+    top: -150px;
+    left: 500px;
+  }
+
+  &:nth-of-type(5) {
+    top: 0;
+    left: 500px;
+  }
+
+  &:nth-of-type(6) {
+    top: 150px;
+    left: 500px;
+  }
+
+  &:nth-of-type(7) {
+    top: 300px;
+    left: 500px;
+  }
+
+  &:nth-of-type(8) {
+    top: 300px;
+    left: 250px;
+  }
+
+  &:nth-of-type(9) {
+    top: 300px;
+    left: 0px;
+  }
+
+  &:nth-of-type(10) {
+    top: 300px;
+    left: -250px;
+  }
+
+  &:nth-of-type(11) {
+    top: 150px;
+    left: -250px;
+  }
+
+  &:nth-of-type(12) {
+    top: 0;
+    left: -250px;
+  }
+}

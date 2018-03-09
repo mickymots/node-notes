@@ -1,0 +1,41 @@
+$blue: #337ab7;
+$red: #d33b36;
+$black: #000000;
+
+button {
+  font-weight: bold;
+}
+
+.blue {
+  color: #fff;
+  background-color: $blue;
+  border-color: $blue;
+}
+
+.red {
+  color: #fff;
+  background-color: $red;
+  border-color: $red;
+}
+
+.black {
+  color: #fff;
+  background-color: $black;
+  border-color: $black;
+}
+
+.secondary {
+  background-color: #fff;
+
+  &.blue {
+    color: $blue;
+  }
+
+  &.red {
+    color: $red;
+  }
+
+  &.black {
+    color: $black;
+  }
+}

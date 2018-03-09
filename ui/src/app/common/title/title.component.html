@@ -1,0 +1,13 @@
+<div class="form-group">
+    <label [for]="idRef" class="control-label">
+        {{ label || 'Title' }}
+    </label>
+    <app-error-msg [msg]="errorMessage"></app-error-msg>
+
+    <div *ngIf="options != null">
+        <select [id]="idRef" [name]="idRef" [class]="cssClass || 'form-control'" [formControl]="childControl"
+            class="form-control" [attr.readonly]="readonly" [required]="required">
+            <option *ngFor="let option of options" [value]="option.id">{{option.values}}</option>
+        </select>
+    </div>
+</div>

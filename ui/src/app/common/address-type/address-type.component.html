@@ -1,0 +1,10 @@
+<div class="form-group">
+    <label for="eligiblityResponse" class="control-label">{{label}}</label>
+    <app-error-msg [msg]="errorMessage"></app-error-msg>
+
+    <select name="eligiblityResponse" [class]="cssClass || 'form-control'" [formControl]="childControl"
+        [required]="required">
+        <option value="">Please Select...</option>
+        <option *ngFor="let item of options" value="{{ item.id }}">{{ item.values }}</option>
+    </select>
+</div>

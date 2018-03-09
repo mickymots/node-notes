@@ -1,0 +1,60 @@
+@import 'styles/variables';
+
+.side-menu__information {
+  background-color: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.side-menu__information .glyphicon-user {
+  font-size: 30px;
+  line-height: 1;
+  top: 5px !important;
+}
+
+.side-menu__information b:first-of-type {
+  width: 150px;
+  font-size: 18px;
+}
+
+.side-menu__information b:first-of-type {
+  color: #018983;
+}
+
+.side-menu__information {
+  font-size: 14px;
+}
+
+.side-menu__information > div {
+  margin-bottom: 10px;
+}
+
+.side-menu__information > div:last-of-type {
+  margin-bottom: 0;
+}
+
+.side-menu__icon {
+  display: block;
+  margin-top: 4px;
+}
+
+.truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  margin-bottom: 0;
+}
+
+.side-menu__information .col-xs-9 {
+  padding-left: 4px !important;
+}
+
+.side-menu__information span {
+  display: block;
+}
+
+.title {
+  color: #018983;
+  font-weight: bold;
+}

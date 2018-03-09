@@ -1,0 +1,55 @@
+<form [formGroup]="form" (ngSubmit)="form.valid && doSearch()" id="globalSearch"
+  class="search">
+
+  <div class="search__dropdown">
+
+    <div class="search__dropdown__header">
+
+      <label for="query">Enter account details to search</label>
+
+      <button type="button" title="Close Search" class="close-search" (click)="hideSearch()">
+        <span class="sr-only">Close Search</span>
+        <app-icon iconClass="glyphicon-remove"></app-icon>
+      </button>
+
+    </div>
+
+    <div class="search__dropdown__body">
+
+      <span class="input-group-btn" dropdown>
+
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="true" [title]="activeType" dropdownToggle>
+          {{ activeType }}
+          <span class="caret"></span>
+        </button>
+
+        <ul class="dropdown-menu" role="menu" *dropdownMenu>
+          <li class="dropdown-header">
+            <b>SEARCH BY:</b>
+          </li>
+          <li *ngFor="let type of types" [class.active]="type === activeType">
+            <a (click)="setType($event)">{{ type }}</a>
+          </li>
+        </ul>
+
+      </span>
+
+      <nino [class.hidden]="activeType !== 'NINO'" formControlName="query" idRef="query"
+        label="NINO" required="true" [disabled]="activeType !== 'NINO'"></nino>
+      <trn [class.hidden]="activeType !== 'TRN'" formControlName="query" idRef="query"
+        label="TRN" required="true" [disabled]="activeType !== 'TRN'"></trn>
+      <utr [class.hidden]="activeType !== 'UTR'" formControlName="query" idRef="query"
+        label="UTR" required="true" [disabled]="activeType !== 'UTR'"></utr>
+      <slcref [class.hidden]="activeType !== 'SLCREF'" formControlName="query" idRef="query"
+        label="SLCREF" required="true" [disabled]="activeType !== 'SLCREF'"></slcref>
+
+
+      <app-button [disabled]="!form.valid" accesskey="g" type="submit">Search</app-button>
+
+
+    </div>
+
+  </div>
+
+</form>

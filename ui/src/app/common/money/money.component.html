@@ -1,0 +1,8 @@
+<div class="form-group">
+  <label for="response-top-up-rate" class="control-label"> {{ label }} </label>
+  <app-error-msg [msg]="errorMessage"></app-error-msg>
+
+  <input type="text" [name]="idRef || 'money'" [class]="cssClass || 'form-control'"
+    [attr.readonly]="readonly" [formControl]="childControl" class="form-control" [id]="idRef || 'money'"
+    [required]="required" />
+</div>

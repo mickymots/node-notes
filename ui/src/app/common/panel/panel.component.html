@@ -1,0 +1,6 @@
+<button class="panel__header" [attr.aria-expanded]="!collapsed" (click)="toggleExpanded()"
+    [title]="heading" id="{{panelIdRef || 'panel'}}" tabindex="0" (keyup.enter)="toggleExpanded()"
+    #panelHead>{{ heading }}</button>
+<div class="panel__body" [class.collapse]="collapsed" #panelBody>
+    <ng-content></ng-content>
+</div>

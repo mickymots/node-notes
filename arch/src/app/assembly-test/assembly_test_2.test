@@ -1,0 +1,122 @@
+/**
+* This is the Assembly Test file for testing integration between the assembly -
+* Error Handler -> Logging service
+* Note - This AT files uses HTTP MockBackend as the backend stub server
+*/
+
+//Angular 'testing' imports
+import { ComponentFixture, TestBed, async, fakeAsync, inject, tick } from '@angular/core/testing';
+import { MockBackend, MockConnection, } from '@angular/http/testing';
+
+//Angular 'core' imports
+import { Injectable, OnInit, OnDestroy, ErrorHandler } from '@angular/core';
+
+//Angular 'HTTP' & 'RxJS' imports
+import { Http, ConnectionBackend, BaseRequestOptions, Response, RequestOptions, ResponseOptions, Headers } from '@angular/http';
+import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
+
+//Custom imports
+import { CustomErrorHandler } from '../error-handler/custom-error-handler';
+import { LoggingService } from "../logging/logging.service";
+import { MessageService } from '../message-handler/message.service';
+import { AuthService } from '../auth/auth.service';
+import { SerializationHelper } from '../serialization/SerializationHelper';
+import { environment } from '../../environments/environment';
+import { AuthReducer } from '../state-manager/auth.reducer';
+import { SessionStateReducer } from '../state-manager/session-state.reducer';
+import { NotificationService } from '../notification/notification.service';
+
+
+// Vendor Imports
+import { StoreModule } from '@ngrx/store';
+
+//use the stub only when hitting stub backend
+const response = { body: '{"response": "OK"}' }
+
+const desc = 'Testing assembly for Error handler -> LoggingService : Error handler';
+
+describe(desc, () => {
+
+  let mockBackend: MockBackend;
+  let errHandler: CustomErrorHandler;
+  let notificationService: NotificationService;
+  let _url = environment.loggerURL;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        StoreModule.provideStore({
+          authReducer: AuthReducer,
+          sessionStateReducer: SessionStateReducer
+        })
+      ],
+      providers: [
+        CustomErrorHandler,NotificationService,
+        { provide: ErrorHandler, useClass: CustomErrorHandler },
+        LoggingService,
+        MessageService,
+        AuthService,      
+        SerializationHelper,
+        BaseRequestOptions,
+        MockBackend,
+        {
+          provide: Http, useFactory: (backend: MockBackend, defaultOptions: BaseRequestOptions) => {
+            return new Http(backend, defaultOptions);
+          }, deps: [MockBackend, BaseRequestOptions]
+        }
+      ]
+    });
+  });
+
+  beforeEach(inject(
+    [CustomErrorHandler, MockBackend],
+    (_errHandler, _mockBackend) => {
+      mockBackend = _mockBackend;
+      errHandler = _errHandler;
+    })
+  );
+
+  //TEST #1: No error reported
+  it('has not received any error yet', () => {
+    let _err = null
+    expect(errHandler.handleError(_err)).toBeUndefined();
+  })
+
+  //TEST #2: Test a valid error
+  it('has received an error message', () => {
+
+    let _err = "Some error message"
+    const mockedResponse = new ResponseOptions({ body: response });
+
+    mockBackend.connections.subscribe(
+      (connection: MockConnection) => {
+        if (connection.request.url === _url) {
+          let obj = JSON.parse(connection.request.getBody());
+          expect(obj.message).toBe("Some error message");
+          expect(obj.logLevel).toBe("error");
+        }
+      }
+    );
+    errHandler.handleError(_err);
+  })
+
+  //TEST #3: Test angular error
+  it('has received an error message', () => {
+
+    let _err = "Uncaught TypeError: Cannot read property 'handleError' of undefined"
+    const mockedResponse = new ResponseOptions({ body: response });
+
+    mockBackend.connections.subscribe(
+      (connection: MockConnection) => {
+        if (connection.request.url === _url) {
+          let obj = JSON.parse(connection.request.getBody());
+          expect(obj.message).toBe("Uncaught TypeError: Cannot read property 'handleError' of undefined");
+          expect(obj.logLevel).toBe("error");
+        }
+      }
+    );
+    errHandler.handleError(_err);
+  })
+  
+});

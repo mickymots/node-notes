@@ -1,0 +1,9 @@
+<li>
+  <button [attr.aria-expanded]="!collapsed" (click)="toggleExpanded()" class="menu__heading"
+    #menuHead>
+    {{ heading }}
+  </button>
+  <ul class="menu__list" #menuBody>
+    <ng-content></ng-content>
+  </ul>
+</li>

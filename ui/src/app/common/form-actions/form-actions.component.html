@@ -1,0 +1,32 @@
+<div class="form-actions-spacer">
+</div>
+
+<div class="buttons-container">
+
+  <!-- Back -->
+  <app-button *ngIf="backRequired && !editable" [routerLink]="backUrl" idRef="backButton"
+    title="Back" accesskeyRef="c" colour="black" level="secondary" (click)="backButtonClick()">Back</app-button>
+
+  <div *ngIf="saveRequired" class="pull-right">
+
+    <!-- Cancel -->
+    <app-button *ngIf="editable" (click)="cancelButtonClick()" accesskeyRef="c" colour="black"
+      title="Cancel" level="secondary" idRef="cancelButton">Cancel</app-button>
+
+    <!-- Edit -->
+    <app-button *ngIf="editable !== undefined && !editable" (click)="editButtonClick()"
+      title="Edit" accesskeyRef="e" idRef="editButton">Edit</app-button>
+
+    <!-- Save -->
+    <app-button *ngIf="editable === undefined || editable" (click)="saveButtonClick()"
+      [title]="saveText" type="submit" accesskeyRef="s" [disabled]="saveDisabled" idRef="saveButton">{{ saveText }}</app-button>
+
+  </div>
+
+  <div *ngIf="insertRequired" class="pull-right">
+
+    <!-- Insert -->
+    <app-insert-button (click)="insertButtonClick()" [disabled]="insertDisabled"></app-insert-button>
+  </div>
+
+</div>

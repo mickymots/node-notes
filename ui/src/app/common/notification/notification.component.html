@@ -1,0 +1,38 @@
+<div *ngIf="isModalShown" [config]="{ show: true, backdrop: true, ignoreBackdropClick: true, keyboard: false }"
+  (onHidden)="onHidden()" bsModal #autoShownModal="bs-modal" class="modal fade" tabindex="-1"
+  role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">{{model.header}}</h4>
+        <!-- <button type="button" class="close pull-right" aria-label="Close" (click)="hideModal()">
+        <span aria-hidden="true">&times;</span>
+      </button>-->
+      </div>
+      <div class="modal-body">
+        <p>{{model.message}}</p>
+      </div>
+      <div class="modal-footer">
+        <div *ngIf="restartApp">
+
+          <button class="btn btn-default" (click)="okClicked.emit(model.header); $event.stopPropagation();">
+        Restart Application 
+      </button>
+        </div>
+        <div *ngIf="isConfirmed">
+          <button class="btn btn-default" (click)="okClicked.emit(model.header); restartTimer();">
+        Yes - Extend Session
+      </button>
+          <button class="btn btn-default" (click)="okClicked.emit(model.header); continueExpire();">
+        No
+      </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="notification-growl-sticky">
+  <!-- <p-growl [sticky]="isSticky" [value]="alerts"></p-growl> -->
+  <p-messages [(value)]="alerts"></p-messages>
+</div>

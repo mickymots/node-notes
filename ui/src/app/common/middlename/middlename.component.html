@@ -1,0 +1,8 @@
+<div class="form-group">
+    <label for="middlename" class="control-label" [class.required]="required">{{label}}</label>
+    <app-error-msg [msg]="errorMessage"></app-error-msg>
+
+    <input type="text" name="middlename" class="form-control" [attr.readonly]="readonly"
+        [disableCond]="disabled" [formControl]="childControl" maxlength="26" [class.error]="errorMessage != null"
+        [required]="required" />
+    <div>

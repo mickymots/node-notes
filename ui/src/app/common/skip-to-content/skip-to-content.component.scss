@@ -1,0 +1,23 @@
+#skipToContent {
+  padding: 6px;
+  position: absolute;
+  top: 0px;
+  //left: 0px;
+  left: -9999em;
+  color: black;
+  //background: #bf1722;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 10000;
+}
+
+#skipToContent:focus {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border: none;
+  box-shadow: none;
+  background: #ffbf47;
+  outline: 0;
+  text-decoration: underline;
+}

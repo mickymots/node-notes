@@ -1,0 +1,8 @@
+<div class="form-group">
+  <label [for]="idRef" class="control-label" [class.required]="required">{{ label }}</label>
+  <app-error-msg [msg]="errorMessage"></app-error-msg>
+
+  <input [id]="idRef" [name]="idRef" type="text" class="form-control" [attr.readonly]="readonly"
+    [disableCond]="disabled" name="nino" [formControl]="childControl" maxlength="{{maxlength}}"
+    [required]="required">
+</div>

@@ -1,0 +1,48 @@
+<!-- Stub Login Page -->
+<app-heading *ngIf="!authService.getAuthStatus()" text="Login"></app-heading>
+<app-heading *ngIf="authService.getAuthStatus()" text="Logout"></app-heading>
+
+<br>
+
+<div class="row">
+    <div class="col-xs-1">
+    </div>
+    <div class="col-xs-4">       
+        <h4 class="first">Standard Logins</h4>
+        <p-dataTable [value]="standard_data">
+            <p-column field="userID" header="User ID"></p-column>
+            <p-column field="role" header="Role"></p-column>            
+        </p-dataTable>
+    </div>
+    <div class="col-xs-2">
+    </div>
+    <div class="col-xs-4">
+        <h4 class="first">SBA Logins</h4>
+        <p-dataTable [value]="sba_data">            
+            <p-column field="userID" header="User ID"></p-column>
+            <p-column field="role" header="Role"></p-column>            
+        </p-dataTable>
+    </div>
+    <div class="col-xs-1">
+    </div>
+</div>
+
+<br>
+<br>
+
+<form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm)" class="form-inline" autocomplete="off" novalidate>
+    <div class="col-xs-1">
+    </div>
+    <div class="form-group">
+        <app-subheading *ngIf="message" [text]="message"></app-subheading>
+        
+        <div class="input-group">
+            <div class="input-group-addon">Enter User ID:</div>
+            <input type="text" class="form-control" placeholder="e.g. 123" required formControlName="uid">
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary" [disabled]="!valid">Log In</button>
+            </span>
+        </div>
+    </div>
+    <p *ngIf="errorMessage" style="color:red">{{errorMessage}}</p>
+</form>

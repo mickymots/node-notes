@@ -1,0 +1,24 @@
+.dashboard__heading {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.dashboard__heading h1 {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.dashboard__heading p {
+  font-size: 1.5em;
+  color: grey;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.dashboard__navigation {
+  padding-left: 0;
+  margin-bottom: 0;
+}

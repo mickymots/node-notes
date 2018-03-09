@@ -1,0 +1,45 @@
+<ul class="header__icons {{ class }}">
+  <li routerLinkActive="active">
+    <button routerLink="/dashboard" alt="Dashboard" title="Dashboard" placement="bottom">
+      <span class="sr-only">Dashboard</span>
+      <app-icon iconClass="glyphicon-home"></app-icon>
+    </button>
+  </li>
+  <li *ngIf="authService.getAuthStatus()" class="header__icons__search">
+    <button (click)="toggleSearch()" alt="Search" title="Search" placement="bottom" accesskey="q">
+      <span class="sr-only">Search</span>
+      <app-icon iconClass="glyphicon-search"></app-icon>
+    </button>
+    <div *ngIf="search" #searchBox>
+      <app-search></app-search>
+    </div>
+  </li>
+  <li>
+    <button routerLink="/preferences" alt="Preferences" title="Preferences" placement="bottom"
+      accesskey="r">
+      <app-icon iconClass="glyphicon-cog">
+        <span class="sr-only">Preferences</span>
+      </app-icon>
+    </button>
+  </li>
+  <li>
+    <button alt="Print" title="Print" placement="bottom" accesskey="p" onclick="window.print();">
+      <span class="sr-only">Print</span>
+      <app-icon iconClass="glyphicon-print"></app-icon>
+    </button>
+  </li>
+  <li *ngIf="query">
+    <button (click)="openHelp()" alt="Help" title="Help (opens in a new window)" placement="bottom"
+      accesskey="h">
+      <span class="sr-only">Help (opens in a new window)</span>
+      <app-icon iconClass="glyphicon-info-sign"></app-icon>
+    </button>
+  </li>
+  <li>
+    <button alt="Exit" aria-label="Exit" title="Exit" placement="bottom" (click)="exitApp()"
+      accesskey="l">
+      <span class="sr-only">Exit</span>
+      <app-icon iconClass="glyphicon-log-out"></app-icon>
+    </button>
+  </li>
+</ul>

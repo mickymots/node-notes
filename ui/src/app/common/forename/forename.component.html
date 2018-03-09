@@ -1,0 +1,11 @@
+<div class="form-group">
+
+    <label [for]="idRef" [class.required]="required" class="control-label">
+        {{ label }}
+    </label>
+    <app-error-msg [msg]="errorMessage"></app-error-msg>
+
+    <input [id]="idRef" [name]="idRef" type="text" class="form-control" [attr.readonly]="readonly"
+        [disableCond]="disabled" [formControl]="childControl" maxlength="26" [class.error]="errorMessage != null"
+        [required]="required">
+</div>

@@ -1,0 +1,14 @@
+<div class="row" [formGroup]="form">
+    <div [class.col-sm-12]="layout === 'vertical'" [class.col-sm-6]="layout === 'horizontal'">
+        <app-date [formControlName]="startDateControlName" [config]="startConfig" [minDate]="minDate"
+            [maxDate]="maxDate" [activeDate]="activeDate" [label]="startDateLabel" [size]="startDateSize"
+            [idRef]="startDateId" [disabled]="disabled" [readonly]="readonly">
+        </app-date>
+    </div>
+    <div [class.col-sm-12]="layout === 'vertical'" [class.col-sm-6]="layout === 'horizontal'">
+        <app-date [formControlName]="endDateControlName" [config]="endConfig" [minDate]="minDate"
+            [maxDate]="maxDate" [activeDate]="activeDate" [label]="endDateLabel" [size]="endDateSize"
+            [idRef]="endDateId" [disabled]="disabled" [readonly]="readonly">
+        </app-date>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="form-group">
+  <label for="{{idRef || 'city'}}" class="control-label" [class.required]="required">
+    {{ label }}
+  </label>
+  <app-error-msg [msg]="errorMessage"></app-error-msg>
+
+  <input class="form-control" name="city" type="text" id="{{idRef || 'city'}}" [formControl]="childControl"
+    maxlength="{{maxlength}}" [attr.readonly]="readonly" [required]="required">
+</div>

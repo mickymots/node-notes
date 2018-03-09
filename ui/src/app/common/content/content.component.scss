@@ -1,0 +1,83 @@
+@import 'styles/variables';
+
+main {
+  background-color: #eee;
+  float: left;
+  width: calc(100% - 260px);
+  position: relative;
+  left: 0;
+  transition: left 0.2s cubic-bezier(0, 0, 0.2, 1);
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1800px) {
+  .no-menu {
+    left: -140px;
+  }
+}
+
+/* Content */
+
+.dashboard-content {
+  position: relative;
+  background-color: #fff;
+  padding: 100px 30px 30px 30px;
+  min-height: calc(100vh - #{$footerHeight});
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.content {
+  position: relative;
+  background-color: #fff;
+  padding: 20px 30px 30px 30px;
+  min-height: calc(100vh - #{$footerHeight});
+  box-shadow: $shadowOne;
+  max-width: 1000px;
+  margin-left: 20px;
+  overflow: hidden;
+}
+
+.no-menu {
+  max-width: none;
+  display: block !important;
+}
+
+.main-dashboard {
+  width: 100% !important;
+  max-width: none;
+  display: block !important;
+}
+
+.main-routes {
+  float: right;
+}
+
+.no-menu .content {
+  min-height: calc(100vh - 120px);
+  display: block;
+  margin: 0;
+}
+
+@media only screen and (min-width: 1520px) {
+  .no-menu .content {
+    margin: 0 auto;
+  }
+}
+
+.main-dashboard {
+  box-shadow: none;
+  min-height: calc(100vh - 120px);
+  background-color: #eee;
+  display: block;
+  margin: 0 auto;
+}
+
+.no-routes {
+  float: none;
+  margin: 0 auto;
+}
+
+.no-routes .content {
+  margin: 0 auto;
+  padding-top: 100px;
+}

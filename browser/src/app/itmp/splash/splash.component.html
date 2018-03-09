@@ -1,0 +1,18 @@
+<div style="text-align: center">
+
+  <p>This is the home page for the HMRC Internal Browser</p>
+  <p>To get started use the search facility in the top left to access an account by
+    entering the appropriate identifier</p>
+
+  <div class="hmrc">
+    <div class="hmrc__location" *ngFor="let location of locations" [attr.data-location]="location">
+      <img src="assets/images/splash/{{ location }}.jpg">
+    </div>
+  </div>
+
+  <app-subheading text="Empowering an efficient and engaged workforce that can provide a first-class service"></app-subheading>
+  <div style="margin-top: -10px;">
+    <app-subheading text="to customers and maximise tax revenues by preventing avoidance and evasion."></app-subheading>
+  </div>
+
+</div>

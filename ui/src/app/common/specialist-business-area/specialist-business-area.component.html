@@ -1,0 +1,10 @@
+<div class="form-group">
+    <label [for]="idRef" class="control-label">{{ label }}</label>
+    <app-error-msg [msg]="errorMessage"></app-error-msg>
+
+    <select [id]="idRef" [name]="idRef" [class]="cssClass || 'form-control'" [formControl]="childControl"
+        class="form-control" [required]="required">
+        <option value="" selected>Please Select...</option>
+        <option *ngFor="let item of data" value="{{ item.id }}">{{ item.values }}</option>
+    </select>
+</div>

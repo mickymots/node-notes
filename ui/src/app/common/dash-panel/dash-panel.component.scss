@@ -1,0 +1,51 @@
+@import 'styles/variables';
+.dashboard__panel {
+  list-style: none;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  box-shadow: $shadowOne;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 45px;
+  transition: box-shadow ease-in-out 0.2s;
+
+  &:hover {
+    box-shadow: $shadowTwo;
+  }
+}
+
+.dashboard__panel__link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.dashboard__panel__logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+}
+
+.dashboard__panel__icon {
+  position: absolute;
+  top: 70%;
+  right: 10px;
+  width: 85px;
+  transform: translateY(-50%);
+}
+
+.dashboard__panel__description {
+  color: #333;
+  position: absolute;
+  width: 100px;
+  top: 70%;
+  left: 10px;
+  text-align: left;
+  font-size: 19px;
+  transform: translateY(-50%);
+}

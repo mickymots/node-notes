@@ -1,0 +1,8 @@
+<div class="form-group">
+  <label [for]="idRef" [class.required]="required" class="control-label">{{label}}</label>
+  <app-error-msg [msg]="errorMessage"></app-error-msg>
+
+  <textarea [id]="idRef" [name]="idRef" rows="10" cols="" class="{{cssClass || 'form-control'}}"
+    [formControl]="childControl" [attr.readonly]="readonly" [class.error]="errorMessage != null"
+    [maxlength]="maxlength" [disableCond]="disabled" [required]="required"></textarea>
+</div>

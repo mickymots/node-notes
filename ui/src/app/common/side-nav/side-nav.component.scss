@@ -1,0 +1,54 @@
+@import 'styles/variables';
+
+.side-menu {
+  width: 260px;
+  z-index: 500;
+  float: left;
+  box-shadow: $shadowOne;
+  position: relative;
+}
+
+.side-menu__list:focus {
+  box-shadow: 0 0 0 3px #ffbf47 !important;
+  outline: 0;
+  outline-offset: 0;
+}
+
+.side-menu .scrollable {
+  max-height: calc(100vh - 200px - #{$headerHeight} - #{$footerHeight});
+}
+
+.side-menu .scrollable {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.side-menu li {
+  list-style: none;
+}
+
+.side-menu__list {
+  padding-left: 0;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+.side-menu__list__item a {
+  color: #555;
+  border-bottom: 1px solid #eee;
+  padding: 8px 20px;
+  display: block;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.side-menu__list__item a:hover {
+  background-color: rgba(1, 137, 131, 0.03);
+}
+
+.dropdown-active {
+  background-color: #eee;
+  color: #555;
+  box-shadow: inset 4px 0px 0px 0px #7cc1bd;
+  background-color: rgba(1, 137, 131, 0.05);
+}
